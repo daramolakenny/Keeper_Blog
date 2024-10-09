@@ -5,7 +5,7 @@ import "../style.css";
 import { Zoom } from '@mui/material';
 
 
-function CreateArea() {
+function CreateArea(props) {
     const [isExpanded, setIsExpanded] = useState(false);
 
     const [note, setNote] = useState({
@@ -30,6 +30,7 @@ function CreateArea() {
             title: "",
             content: ""
         });
+
         e.preventDefault();
     }
 
@@ -38,7 +39,7 @@ function CreateArea() {
     }
 
   return (
-    <div>
+    <div className='container'>
         <form className='create-note'>
             {isExpanded ? <input 
                 name="title"
@@ -60,10 +61,6 @@ function CreateArea() {
                     <AddIcon />
                 </Fab>
             </Zoom>
-
-            {/* <button onClick={submitNote}>
-                <AddIcon />
-            </button> */}
         </form>
     </div>
   );
